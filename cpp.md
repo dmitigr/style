@@ -1,13 +1,14 @@
 # The C++ programming style
 
-The base of the C++ programming style described here is the style of the C++
+The C++ programming style described here is based on the style of the C++
 Standard Library.
 
 ## Indentation and braces
 
 Two spaces must be used for indentation.
 
-The opening brace (`{`) should be placed at the next line only when defining a function, for example:
+The opening brace (`{`) should be placed at the next line only when defining
+a function, for example:
 
 ```c++
 void foo()
@@ -39,13 +40,25 @@ if (1 == 2) {
 
 ## Naming
 
-Naming - is an art. The main purposes of naming are consistency and readability.
+Naming - is an art. The main purposes of naming are *consistency* and
+*readability*.
 
 Like the C++ Standard Library the underscore letter (`_`) must be used to
-separate the words of identifiers (so-called *snake case*).
+separate the words of identifiers (so-called *snake case*). The exception is
+templates arguments, in which the first letter of each word is capitalized
+(so-called *camel case*).
 
-The exception is templates arguments, in which the first letter of each word is
-capitalized (so-called *camel case*).
+### Abbrebiations
+
+Abbreviations should be avoided whenever possible. But if the length of name
+exceeds the one of the [limits](#length-limits) below, intellectual effort
+should be made to shorten the name in a way that doesn't compromise both the
+consistency and clarity. For example, if in the class scope there are some
+methods that are close in meaning, which are already named without using
+abbreviations, then adding another method with a similar meaning using
+abbreviations will break the naming consistency. Any abbreviation used that
+appears during the project should be included into an abbreviation dictionary
+for reuse for better consistency.
 
 ### Length limits
 
@@ -148,6 +161,13 @@ Examples: `to_string`, `to_person`.
 
 ## Classes and structures
 
+Classes (types) are created only for those entities that are directly related to
+the project domain  - the *primary entities*. For example, in the network library
+the "IP address" is the one of the primary entities, but in the database driver
+it's only one of the possible connection settings. For *secondary* entities,
+either fundamental types, standard types, or types from third-party libraries
+should be used.
+
 ### Class member definition order
 
 When defining a class, its members should be defined in the following order:
@@ -171,3 +191,8 @@ Each section should define its members in the following order:
   - copy assignment operator;
   - constructors;
   - swap().
+
+## Functions
+
+If a programmer can check the correctness of function arguments before call,
+then the function itself should only `assert` that the arguments are correct.
