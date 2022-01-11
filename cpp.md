@@ -31,7 +31,7 @@ If a branch of `if` consists of only one line (excluding comments) this line
 should not be surrounded with braces, for example:
 
 ```c++
-if (1 == 2) {
+if (a == b) {
   // this branch contains multiple lines of code
   // ...
 } else
@@ -153,7 +153,7 @@ case (such as `take_`, `pop_`, etc).
 Conversion functions performs conversions of *data representations* and possibly
 (but don't necessarily) the *data types*. As a result of conversion according to
 the law `y=to_y(x)`, the reverse conversion according to the law `x=to_x(y)` is
-possible (at least in theory).
+possible.
 
 The names of conversion functions must begin with `to_`.
 
