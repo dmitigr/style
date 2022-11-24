@@ -79,8 +79,10 @@ for reuse for better consistency.
 |Abstract class implementation          |`Foo_abstract_class`     |
 |Alias (pseudo-name)                    |`Pseudo_name`            |
 |Template argument name                 |`TemplateArgumentName`   |
-|Constant name                          |`constant_name`          |
-|Variable name                          |`variable_name`          |
+|Block scope constant name              |`constant_name`          |
+|Namespace scope constant name          |`constant_name_g`        |
+|Block scope variable name              |`variable_name`          |
+|Namespace scope variable name          |`variable_name_g`        |
 |Protected (private) member name        |`private_member_name_`   |
 |Public member name                     |`public_member_name`     |
 |Function name                          |`function_name(arg_name)`|
