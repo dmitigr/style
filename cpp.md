@@ -28,7 +28,7 @@ class Foo {
 `else` should follow after the closing brace (`}`) on the same line.
 
 If a branch of `if` consists of only one line (excluding comments) this line
-should not be surrounded with braces, for example:
+*may* not be surrounded with braces, for example:
 
 ```c++
 if (a == b) {
