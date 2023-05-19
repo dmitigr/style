@@ -178,7 +178,7 @@ When defining a class, its members should be defined in the following order:
   - `protected` section;
   - `private` section.
 
-Each section should define its members in the following order:
+The *recommended* order of members definition of the `public` section is as follows:
 
   - friends (should be in `protected` or `private` sections);
   - usings which are not depends on class internals;
@@ -192,7 +192,8 @@ Each section should define its members in the following order:
   - move assignment operator;
   - copy assignment operator;
   - constructors;
-  - swap().
+  - swap();
+  - API.
 
 ## Functions
 
