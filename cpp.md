@@ -8,16 +8,16 @@ Standard Library.
 Two spaces must be used for indentation.
 
 The opening brace (`{`) should be placed at the next line only when defining
-a function, for example:
+a function or labmda, for example:
 
 ```c++
 void foo()
 {
-  // ...
+  const auto bar = []{};
 }
 ```
 
-In other cases the opening brace should be placed at the same line, for example:
+In other cases the opening brace must be placed at the same line, for example:
 
 ```c++
 class Foo {
@@ -25,10 +25,10 @@ class Foo {
 };
 ```
 
-`else` should follow after the closing brace (`}`) on the same line.
+`else` or `else if` should follow after the closing brace (`}`) on the same line.
 
 If a branch of `if` consists of only one line (excluding comments) this line
-*may* not be surrounded with braces, for example:
+*must* not be surrounded with braces, for example:
 
 ```c++
 if (a == b) {
@@ -38,15 +38,36 @@ if (a == b) {
   // this branch contains single line of code
 ```
 
+Empty blocks defined by braces must contains nothing, for example
+
+```c++
+struct Foo final {};
+
+void bar()
+{}
+
+void baz()
+try {
+  []{}();
+} catch (...) {}
+```
+
 ## Naming
 
 Naming - is an art. The main purposes of naming are *consistency* and
 *readability*.
 
-Like the C++ Standard Library the underscore letter (`_`) must be used to
-separate the words of identifiers (so-called *snake case*). The exception is
-templates arguments, in which the first letter of each word is capitalized
-(so-called *camel case*).
+The underscore letter (`_`) must be used to separate the words of identifiers
+(so-called *snake case*) except the templates arguments, in which the first
+letter of each word is capitalized (so-called *camel case*).for example:
+
+```c++
+template<typename TheTemplateArgument>
+struct The_struct {
+  void the_function()
+  {}
+};
+```
 
 ### Abbrebiations
 
