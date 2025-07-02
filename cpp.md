@@ -77,16 +77,15 @@ should be made to shorten the name in a way that doesn't compromise both the
 consistency and clarity. For example, if in the class scope there are some
 methods that are close in meaning, which are already named without using
 abbreviations, then adding another method with a similar meaning using
-abbreviations will break the naming consistency. Any abbreviation used that
-appears during the project should be included into an abbreviation dictionary
-for reuse for better consistency.
+abbreviations will break the naming consistency. Any abbreviation used in the
+project should be included into a project abbreviation dictionary for reuse.
 
 ### Length limits
 
 |Naming unit|Limit (in characters)|
 |:----------|:--------------------|
-|Namespace  |10                   |
-|Type       |20                   |
+|Namespace  |16                   |
+|Type       |32                   |
 |Variable   |32                   |
 |Constant   |32                   |
 |Function   |32                   |
@@ -101,12 +100,12 @@ for reuse for better consistency.
 |Alias (pseudo-name)                    |`Pseudo_name`            |
 |Template argument name                 |`TemplateArgumentName`   |
 |Block scope constant name              |`constant_name`          |
-|Namespace scope constant name          |`constant_name_g`        |
 |Block scope variable name              |`variable_name`          |
-|Namespace scope variable name          |`variable_name_g`        |
+|Namespace scope constant name          |`constant_name`          |
+|Namespace scope variable name          |`variable_name`          |
 |Protected (private) member name        |`private_member_name_`   |
 |Public member name                     |`public_member_name`     |
-|Function name                          |`function_name(arg_name)`|
+|Function name                          |`function_name`          |
 
 ### Namespaces
 
@@ -139,9 +138,9 @@ Examples: `Modifiable`, `Parameterizable`.
 
 Structure templates that are used to define functions for compile-time
 polymorphism (so-called *traits*) are nouns (with or without adjectives) in the
-plural.
+plural, or nouns with suffix `_traits`.
 
-Examples: `Conversions`.
+Examples: `Conversions`, `Char_traits`.
 
 ### Functions
 
@@ -150,7 +149,7 @@ Examples: `Conversions`.
 In some cases constructors should be defined as static functions. These functions
 must begin with `make`.
 
-Examples: `Person::make_from_json_string`.
+Examples: `Person::make_from(const Json_value&)`.
 
 #### Functions without side effects
 
